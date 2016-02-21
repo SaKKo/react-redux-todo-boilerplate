@@ -1,8 +1,4 @@
-import {
-  ADD_TODO,
-  TOGGLE_TODO,
-  SET_VISIBILITY_FILTER
-} from '../constants/ActionTypes';
+import {ADD_TODO,TOGGLE_TODO,SET_VISIBILITY_FILTER} from '../constants/ActionTypes';
 
 let nextTodoId = 0;
 
