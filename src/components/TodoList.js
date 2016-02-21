@@ -1,30 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Todo from './Todo';
 import { toggleTodo } from '../actions/actions';
-
-const Todo = ({
-  onClick,
-  completed,
-  text
-  }) => (
-  <li
-    onClick={onClick}
-    style={{
-      textDecoration:
-        completed ?
-          'line-through' :
-          'none'
-    }}
-    className={
-        completed ?
-          'completed' :
-          ''
-    }
-    >
-    {text}
-  </li>
-);
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/ActionTypes';
 
 const TodoList = ({
   todos,
@@ -46,13 +25,13 @@ const getVisibleTodos = (
   filter
 ) => {
   switch (filter) {
-    case 'SHOW_ALL':
+    case SHOW_ALL:
       return todos;
-    case 'SHOW_COMPLETED':
+    case SHOW_COMPLETED:
       return todos.filter(
           t => t.completed
       );
-    case 'SHOW_ACTIVE':
+    case SHOW_ACTIVE:
       return todos.filter(
           t => !t.completed
       );

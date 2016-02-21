@@ -2,27 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { setVisibilityFilter } from '../actions/actions';
-
-const Link = ({
-  active,
-  children,
-  onClick
-  }) => {
-  if (active) {
-    return <span>{children}</span>;
-  }
-
-  return (
-    <a href='#'
-       onClick={e => {
-         e.preventDefault();
-         onClick();
-       }}
-      >
-      {children}
-    </a>
-  );
-};
+import { SHOW_ALL,SHOW_ACTIVE,SHOW_COMPLETED } from '../constants/ActionTypes';
+import Link from './Link';
 
 const mapStateProps = (
   state,
@@ -52,20 +33,22 @@ const FilterLink = connect(
   mapDispatchProps
 )(Link);
 
-export default () => (
+const Footer = () => (
   <p>
     Show:
     {' '}
-    <FilterLink filter='SHOW_ALL'>
+    <FilterLink filter={SHOW_ALL}>
       All
     </FilterLink>
     {', '}
-    <FilterLink filter='SHOW_ACTIVE'>
+    <FilterLink filter={SHOW_ACTIVE}>
       Active
     </FilterLink>
     {', '}
-    <FilterLink filter='SHOW_COMPLETED'>
+    <FilterLink filter={SHOW_COMPLETED}>
       Completed
     </FilterLink>
   </p>
 );
+
+export default Footer;
