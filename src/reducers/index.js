@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import fuelSavingsAppState from './fuelSavings';
+import todos from './todos';
+import visibilityFilter from './visibilityFilter';
 
-const rootReducer = combineReducers({
-  fuelSavingsAppState
+const todoApp = combineReducers({
+  todos,
+  visibilityFilter
 });
 
-export default rootReducer;
+export default todoApp;

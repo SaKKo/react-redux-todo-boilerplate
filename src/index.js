@@ -6,9 +6,10 @@ import configureStore from './store/configureStore';
 import './styles/styles.scss'; //Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
 
 const store = configureStore();
-
+window.store = store;
 render(
   <Provider store={store}>
     <App />
-  </Provider>, document.getElementById('app')
+  </Provider>
+  , document.getElementById('app')
 );
