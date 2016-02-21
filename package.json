@@ -1,6 +1,6 @@
 {
-  "name": "react-slingshot",
-  "version": "1.1.1",
+  "name": "react-redux",
+  "version": "1.0.0",
   "description": "Starter kit for creating apps with React and Redux",
   "scripts": {
     "prestart": "npm run remove-dist",
@@ -16,7 +16,7 @@
     "test": "cross-env NODE_ENV=test mocha --reporter progress --compilers js:babel-core/register --recursive \"./src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "Cory House",
+  "author": "SaKKo sama",
   "license": "MIT",
   "dependencies": {
     "object-assign": "4.0.1",
@@ -77,6 +77,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/react-slingshot"
+    "url": "https://github.com/SaKKo/react-redux-todo-boilerplate"
   }
 }
