@@ -3,13 +3,19 @@ import {render} from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './containers/App';
 import configureStore from './store/configureStore';
-import './styles/styles.scss'; //Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
+import Header from './components/Header';
+import './styles/styles.scss';
 
 const store = configureStore();
-window.store = store;
+
 render(
   <Provider store={store}>
     <App />
   </Provider>
   , document.getElementById('app')
+);
+
+render(
+  <Header />,
+  document.getElementById('header')
 );
