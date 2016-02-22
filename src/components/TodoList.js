@@ -20,6 +20,7 @@ const TodoList = ({
   </ul>
 );
 
+// just for filtering
 const getVisibleTodos = (
   todos,
   filter
@@ -38,6 +39,7 @@ const getVisibleTodos = (
   }
 };
 
+// just to return visible todos as Props
 const mapStateToProps = (
   state
 ) => {
@@ -48,6 +50,8 @@ const mapStateToProps = (
     )
   };
 };
+
+// Used in react to dispatch Action
 const mapDispatchToProps = (
   dispatch
 ) => {
@@ -57,6 +61,8 @@ const mapDispatchToProps = (
     }
   };
 };
+
+// merge everything and export
 export default connect(
   mapStateToProps,
   mapDispatchToProps
